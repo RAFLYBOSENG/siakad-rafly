@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/database.php';
 
-const APP_URL = '/'; // Ubah menjadi '/nama-folder/' jika aplikasi tidak berada di web root.
+const APP_URL = '/siakad/'; // Ubah menjadi '/nama-folder/' jika aplikasi tidak berada di web root.
 const SESSION_TIMEOUT = 1800;
 
 if (session_status() === PHP_SESSION_NONE) session_start();
