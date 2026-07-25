@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Background -->
+  <rect width="128" height="128" rx="24" fill="#4f46e5"/>
+  
+  <!-- Geometric encryption symbol -->
+  <g fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left square (plaintext) -->
+    <rect x="20" y="40" width="28" height="28" rx="2"/>
+    <text x="34" y="62" font-size="14" font-weight="bold" fill="white" text-anchor="middle">P</text>
+    
+    <!-- Arrow -->
+    <path d="M 52 54 L 64 54 M 64 54 L 60 50 M 64 54 L 60 58"/>
+    
+    <!-- Right square (ciphertext) -->
+    <rect x="80" y="40" width="28" height="28" rx="2"/>
+    <text x="94" y="62" font-size="14" font-weight="bold" fill="white" text-anchor="middle">C</text>
+    
+    <!-- Key indicator below -->
+    <circle cx="64" cy="90" r="12"/>
+    <path d="M 60 90 L 56 90 M 68 90 L 72 90"/>
+  </g>
+  
+  <!-- Binary representation -->
+  <text x="64" y="110" font-size="10" fill="white" text-anchor="middle" opacity="0.8">01010101</text>
+</svg>

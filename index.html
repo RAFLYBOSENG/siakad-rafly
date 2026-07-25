@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4f46e5" />
+    <title>S-AES Lab | Simulator</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+  </head>
+  <body>
+    <header class="hero"><div><p class="eyebrow">KRIPTOGRAFI · PEMBELAJARAN INTERAKTIF</p><h1>S-AES Lab</h1><p>Simulasi <i>Simplified Advanced Encryption Standard</i> 16-bit dengan jejak perhitungan lengkap.</p></div><div class="header-actions"><span class="badge">GF(2⁴) · x⁴ + x + 1</span><button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle Dark/Light Mode">🌙</button></div></header>
+    <main class="layout">
+      <section class="workspace">
+        <article class="card input-card"><div class="card-title"><span class="icon">⌁</span><div><h2>Konfigurasi</h2><p>Masukkan blok data dan kunci 16-bit dalam biner.</p></div></div>
+          <form id="crypto-form" novalidate><label>Plaintext / Ciphertext<input id="data-input" inputmode="numeric" maxlength="16" value="1101011100101000" aria-describedby="data-help" /></label><small id="data-help">Contoh: 1101011100101000</small><label>Secret Key<input id="key-input" inputmode="numeric" maxlength="16" value="0100101011110101" /></label><div class="mode"><label><input type="radio" name="mode" value="encrypt" checked /> Enkripsi</label><label><input type="radio" name="mode" value="decrypt" /> Dekripsi</label></div><p id="error" class="error" role="alert"></p><button type="submit">Jalankan Simulasi <span>→</span></button></form>
+        </article>
+        <section id="result" hidden>
+          <article class="card result-card"><div class="result-head"><div><p class="eyebrow" id="result-mode">HASIL ENKRIPSI</p><h2 id="output-hex">—</h2></div><span class="success">Selesai</span></div><div class="output-grid"><div><span>Biner</span><code id="output-binary"></code></div><div><span>Heksadesimal</span><code id="output-hex-small"></code></div><div><span>State Matrix</span><div id="output-matrix"></div></div></div></article>
+          <article class="card"><div class="card-title"><span class="icon key">⌘</span><div><h2>Round Key</h2><p>Hasil ekspansi kunci K0, K1, dan K2.</p></div></div><div id="keys" class="keys"></div></article>
+          <article class="card steps-card"><div class="card-title"><span class="icon round">◌</span><div><h2>Step-by-step</h2><p>Setiap transformasi dan kalkulasi GF(2⁴).</p></div></div><div id="steps" class="steps"></div></article>
+        </section>
+      </section>
+      <aside class="reference"><article class="card sticky"><p class="eyebrow">REFERENSI ALGORITMA</p><h2>Parameter S-AES</h2><dl><div><dt>Block / Key</dt><dd>16 bit</dd></div><div><dt>Round</dt><dd>2</dd></div><div><dt>Polinomial</dt><dd>x⁴ + x + 1 <small>(0x13)</small></dd></div></dl><h3>S-Box</h3><div id="sbox"></div><h3>Inverse S-Box</h3><div id="inv-sbox"></div><h3>MixColumns</h3><div class="math-matrix"><span>1</span><span>4</span><span>4</span><span>1</span></div><h3>RCON</h3><div class="rcon"><code>RCON₁ 80</code><code>RCON₂ 30</code></div></article></aside>
+    </main><footer>Dibangun manual untuk mempelajari mekanisme S-AES — tanpa library kriptografi.</footer>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
